@@ -2,7 +2,19 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  theme: {},
+  theme: {
+    extend: {
+      colors: {
+        lightBackground: "rgb(246,248,252)",
+        "lightBackground-2": "rgb(241,243,244)",
+        darkBackground: "rgb(41,42,45)",
+        "darkBackground-2": "rgb(61,64,67)",
+        "white-100": "rgb(225,226,227)",
+        "black-100": "rgb(32,33,36)",
+        "gray-100": "rgb(32,33,36)",
+      },
+    },
+  },
   plugins: [
     function ({ addBase }: { addBase: (base: Record<string, { [key: string]: string }>) => void }) {
       addBase({
