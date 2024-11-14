@@ -19,8 +19,12 @@ const NewsBlock = ({
 }: NewsBlockProps) => {
   return (
     <article
-      className={`${className} ${isSingle ? "flex justify-between" : ""} ${
-        isFeatured ? "" : "bg-lightBackground sm:bg-transparent"
+      className={`${className} dark:text-lightBackground ${
+        isSingle ? "flex justify-between" : ""
+      } ${
+        isFeatured
+          ? ""
+          : "bg-lightBackground dark:bg-darkBackground-2 sm:bg-transparent dark:sm:bg-transparent"
       }`}
     >
       {isFeatured && !isSingle && (
@@ -29,14 +33,22 @@ const NewsBlock = ({
       <div className="flex flex-col justify-between">
         <div className="">
           <div className={`flex ${isFeatured ? "text-sm" : "text-xs"} gap-1 items-center`}>
-            <img src={news.source.icon} alt="source" className="h-[0.875rem]" />
+            <img
+              src={news.source.icon}
+              alt="source"
+              className="h-[0.875rem] dark:bg-lightBackground-2"
+            />
             {news.source.text && <span>{news.source.text}</span>}
           </div>
-          <p className={`mt-2 ${isFeatured ? "text-lg" : "text-sm text-gray-600"} ${titleClass}`}>
+          <p
+            className={`mt-2 ${
+              isFeatured ? "text-lg" : "text-sm text-gray-600 dark:text-lightBackground-2"
+            } ${titleClass}`}
+          >
             {news.title}
           </p>
         </div>
-        <p className={`mt-2 text-xs`}>{news.date}</p>
+        <p className={`mt-2 text-xs dark:text-gray-400`}>{news.date}</p>
       </div>
       {isFeatured && isSingle && (
         <img

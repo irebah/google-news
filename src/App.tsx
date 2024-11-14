@@ -33,11 +33,13 @@ const App = () => {
 
       <main
         onClick={clickedOnMainSection}
-        className="bg-lightBackground dark:bg-darkBackground mt-5 max-w-6xl mx-auto"
+        className="bg-lightBackground dark:bg-darkBackground dark:text-lightBackground mt-0 lg:mt-5 xl:max-w-6xl xl:mx-auto lg:mx-5"
       >
         <section>
           <h1 className="hidden lg:block text-3xl mb-2">Your briefing</h1>
-          <p className="hidden lg:block mb-5 text-sm text-gray-600">{getDate()}</p>
+          <p className="hidden lg:block mb-5 text-sm text-gray-600 dark:text-gray-300">
+            {getDate()}
+          </p>
           <div className="lg:flex w-full gap-5">
             <Card title="Top stories" id="topStories" className="lg:rounded-2xl lg:w-4/6" />
             <div className="lg:flex flex-col gap-5 lg:w-2/6">

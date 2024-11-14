@@ -38,14 +38,14 @@ const Card = ({ title, id, className = "", titleClass = "", imageSize = "" }: Ca
   }, [id]);
 
   return (
-    <section className={`${className} bg-white p-5 w-full`}>
-      <div className="flex items-center gap-2 text-blue-600">
+    <section className={`${className} bg-white dark:bg-black-100 p-5 w-full`}>
+      <div className="flex items-center gap-2 text-blue-600 dark:text-lightBackground">
         <p className="text-xl">{title}</p>
         <FaChevronRight className="" />
       </div>
       {data.map((mainNews) => (
         <Fragment key={`${id}-${mainNews.id}`}>
-          <hr className="mt-4" />
+          <hr className="mt-4 dark:border-darkBackground-2" />
           <section className="sm:flex gap-5 mt-4">
             <NewsBlock
               news={mainNews}
