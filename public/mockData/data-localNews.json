@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "image": "img5.jpeg",
+    "source": {
+      "icon": "stuff.webp"
+    },
+    "title": "Crash causes chaos on Auckland’s Northwestern Motorway",
+    "date": "202024-11-10T20:11:24Z"
+  },
+  {
+    "id": 2,
+    "image": "img6.webp",
+    "source": {
+      "icon": "nzherald_co_nz.webp"
+    },
+    "title": "'Bittersweet': Auckland’s only elephant arrives safely at new home in Australia",
+    "date": "202024-11-10T20:11:24Z"
+  },
+  {
+    "id": 3,
+    "image": "img7.jpeg",
+    "source": {
+      "icon": "onenews.webp"
+    },
+    "title": "Auckland woman 'amazed' by community support after cat attacked",
+    "date": "202024-11-10T20:11:24Z"
+  }
+]

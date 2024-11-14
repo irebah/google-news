@@ -35,29 +35,39 @@ const App = () => {
         onClick={clickedOnMainSection}
         className="bg-lightBackground dark:bg-darkBackground mt-5 max-w-6xl mx-auto"
       >
-        <section className="">
-          <h1 className="text-3xl mb-2">Your briefing</h1>
-          <p className="mb-5 text-sm text-gray-600">{getDate()}</p>
-          <div className="flex w-full gap-5">
-            <Card title="Top stories" id="topStories" className="rounded-2xl w-2/3" />
-            <div className="flex flex-col gap-5 w-1/3">
-              <Card title="Local News" id="localNews" className="rounded-2xl" />
-              <Card title="Picks for you" id="picksForYou" className="rounded-2xl" />
+        <section>
+          <h1 className="hidden lg:block text-3xl mb-2">Your briefing</h1>
+          <p className="hidden lg:block mb-5 text-sm text-gray-600">{getDate()}</p>
+          <div className="lg:flex w-full gap-5">
+            <Card title="Top stories" id="topStories" className="lg:rounded-2xl lg:w-4/6" />
+            <div className="lg:flex flex-col gap-5 lg:w-2/6">
+              <Card
+                title="Local News"
+                id="localNews"
+                className="mt-2 lg:mt-0 lg:rounded-2xl"
+                titleClass="text-sm"
+                imageSize="size-[4rem]"
+              />
+              <Card
+                title="Picks for you"
+                id="picksForYou"
+                className="mt-2 lg:mt-0 lg:rounded-2xl"
+              />
             </div>
           </div>
         </section>
 
-        <section>
+        {/* <section>
           <h1 className="text-3xl mb-2">For you</h1>
           <p className="mb-5 text-sm text-gray-600">Recommended based on your interests</p>
           <div>
-            <Card title="Top stories" id="topStories" className="rounded-2xl" />
+            <Card title="Top stories" id="a" className="rounded-2xl" />
             <div>
-              <Card title="Local News" id="topStories" className="rounded-2xl" />
-              <Card title="Picks for you" id="topStories" className="rounded-2xl" />
+              <Card title="Local News" id="b" className="rounded-2xl" />
+              <Card title="Picks for you" id="c" className="rounded-2xl" />
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
     </>
   );

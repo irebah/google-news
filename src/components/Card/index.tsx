@@ -1,116 +1,74 @@
+import { FaChevronRight } from "react-icons/fa";
+import { News } from "../../types";
+import NewsBlock from "./NewsBlock";
+import { Fragment } from "react/jsx-runtime";
+import { useEffect, useState } from "react";
+
 interface CardProps {
   title: string;
   id: string;
-  className: string;
+  className?: string;
+  titleClass?: string;
+  imageSize?: string;
 }
 
-const data = [
-  {
-    image: "img1.webp",
-    source: {
-      icon: "rotorua_daily.webp",
-    },
-    title: "National hīkoi to descend on Rotorua",
-    date: "202024-11-10T20:11:24Z",
-    secondary: [
-      {
-        source: {
-          icon: "rnz_icon.png",
-          text: "RNZ",
-        },
-        title: "Live: Parliament sits to debate Treaty Principles Bill",
-        date: "202024-11-10T20:11:24Z",
-      },
-      {
-        source: {
-          icon: "nzheraldicon.png",
-          text: "New Zealand Herald",
-        },
-        title:
-          "Treaty Principles Bill live updates: Government to face grilling ahead of first vote",
-        date: "202024-11-10T20:11:24Z",
-      },
-      {
-        source: {
-          icon: "thepost.png",
-          text: "The Post",
-        },
-        title: "Christopher Luxon accuses David Seymour of 'not helping' the Government",
-        date: "202024-11-10T20:11:24Z",
-      },
-    ],
-  },
+const Card = ({ title, id, className = "", titleClass = "", imageSize = "" }: CardProps) => {
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string>("");
+  const [data, setData] = useState<Array<News>>([]);
 
-  {
-    image: "img2.jpeg",
-    source: {
-      icon: "onenews.webp",
-    },
-    title: "Trump reveals major cabinet roles for Rubio, Gabbard and Gaetz",
-    date: "202024-11-10T20:11:24Z",
-    secondary: [
-      {
-        source: {
-          icon: "bbc_icon.png",
-          text: "BBC.com",
-        },
-        title: "Matt Gaetz: Trump's choice for attorney general shocks Washington",
-        date: "202024-11-10T20:11:24Z",
-      },
-      {
-        source: {
-          icon: "washingtonPost.png",
-          text: "The Washington Post",
-        },
-        title: "Trump picks Gaetz and Gabbard for top jobs, daring Senate GOP to defy him",
-        date: "202024-11-10T20:11:24Z",
-      },
-    ],
-  },
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`/mockData/data-${id}.json`);
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
 
-  {
-    image: "img3.webp",
-    source: {
-      icon: "nzherald_co_nz.webp",
-    },
-    title: "'Tragically taken': Police name victims of triple-fatal Hamilton train crash",
-    date: "202024-11-10T20:11:24Z",
-  },
-];
+        const result: Array<News> = await response.json();
+        setData(result);
+        setLoading(false);
+      } catch (e) {
+        setError("Error fetching data");
+        setLoading(false);
+      }
+    };
 
-const Card = ({ title, id, className }: CardProps) => {
+    fetchData();
+  }, [id]);
+
   return (
     <section className={`${className} bg-white p-5 w-full`}>
-      <p className="">{title}</p>
+      <div className="flex items-center gap-2 text-blue-600">
+        <p className="text-xl">{title}</p>
+        <FaChevronRight className="" />
+      </div>
       {data.map((mainNews) => (
-        <>
+        <Fragment key={`${id}-${mainNews.id}`}>
           <hr className="mt-4" />
-          <section className="flex gap-5 mt-4">
-            <article className={`${mainNews.secondary ? "w-2/5" : "w-full"}`}>
-              <img className="rounded-2xl" src={mainNews.image} alt="main image block" />
-              <div className="mt-2 flex text-sm gap-1 items-center">
-                <img src={mainNews.source.icon} alt="source" />
-                {mainNews.source.text && <span>{mainNews.source.text}</span>}
-              </div>
-              <p className="mt-2 text-lg">{mainNews.title}</p>
-              <p className="mt-2 text-xs">{mainNews.date}</p>
-            </article>
+          <section className="sm:flex gap-5 mt-4">
+            <NewsBlock
+              news={mainNews}
+              isFeatured
+              isSingle={!mainNews.secondary}
+              className={`${mainNews.secondary ? "w-full lg:w-2/5" : "w-full"}`}
+              titleClass={titleClass}
+              imageSize={imageSize}
+            />
+
             {mainNews.secondary && (
-              <aside className="w-3/5">
+              <aside className="flex gap-1 sm:block w-full overflow-y-auto mt-5 sm:mt-0 lg:w-3/5 rounded-xl sm:rounded-none">
                 {mainNews.secondary.map((secondaryNews) => (
-                  <article className="mb-3">
-                    <div className="flex text-xs gap-1 items-center">
-                      <img src={secondaryNews.source.icon} alt="source" className="h-4" />
-                      {secondaryNews.source.text && <span>{secondaryNews.source.text}</span>}
-                    </div>
-                    <p className="mt-2 text-sm">{secondaryNews.title}</p>
-                    <p className="mt-2 text-xs">{secondaryNews.date}</p>
-                  </article>
+                  <NewsBlock
+                    className="min-w-[20rem] sm:min-w-0 sm:mb-4 sm:last:mb-0 p-4 sm:p-0"
+                    key={`${id}-${mainNews.id}-${secondaryNews.id}`}
+                    news={secondaryNews}
+                  />
                 ))}
               </aside>
             )}
           </section>
-        </>
+        </Fragment>
       ))}
     </section>
   );
