@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.smallDeviceMenu {
+  @apply flex gap-0 px-3 pt-3 text-sm bg-lightBackground absolute inset-0 w-[16rem] flex-col h-screen max-h-fit overflow-y-auto shadow-2xl;
+}
+
+.bigDeviceMenu {
+  @apply md:font-semibold md:pt-0 md:gap-10 md:px-0 md:bg-white md:relative md:inset-auto md:w-auto md:flex-row md:h-auto md:shadow-none;
+}
+
+.verticalSeparator {
+  @apply md:after:ml-10 md:after:content-[''] md:after:border-l-2 md:after:border-gray-400/30 md:after:h-5;
+}
+
+.horizontalSeparator {
+  @apply after:content-[''] after:border-b-2 after:border-gray-400/30 after:w-[14rem] after:-ml-4 after:pb-12 after:absolute;
+}

@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx,json}"],
   theme: {
     extend: {
       colors: {
@@ -10,8 +10,11 @@ const config: Config = {
         darkBackground: "rgb(41,42,45)",
         "darkBackground-2": "rgb(61,64,67)",
         "white-100": "rgb(225,226,227)",
+        "white-200": "rgb(218,220,224)",
         "black-100": "rgb(32,33,36)",
-        "gray-100": "rgb(32,33,36)",
+      },
+      screens: {
+        xs: "20rem",
       },
     },
   },

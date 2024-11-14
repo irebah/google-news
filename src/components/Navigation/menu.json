@@ -1,0 +1,96 @@
+[
+  {
+    "id": 1,
+    "label": "Home",
+    "className": "hidden md:inline-block",
+    "url": "#"
+  },
+  {
+    "id": 1,
+    "label": "Top Stories",
+    "className": "md:hidden",
+    "url": "#",
+    "icon": "globe"
+  },
+  {
+    "id": 3,
+    "label": "For you",
+    "url": "#"
+  },
+  {
+    "id": 4,
+    "label": "Following",
+    "className": "",
+    "url": "#",
+    "icon": "star"
+  },
+  {
+    "id": 5,
+    "label": "News Showcase",
+    "className": "verticalSeparator",
+    "url": "#",
+    "icon": "news"
+  },
+  {
+    "id": 6,
+    "label": "Saved searches",
+    "className": "md:hidden horizontalSeparator mb-5",
+    "url": "#",
+    "icon": "search"
+  },
+  {
+    "id": 7,
+    "label": "New Zealand",
+    "url": "#",
+    "icon": "flag"
+  },
+  {
+    "id": 8,
+    "label": "World",
+    "url": "#",
+    "icon": "earth"
+  },
+  {
+    "id": 9,
+    "label": "Local",
+    "className": "",
+    "url": "#",
+    "icon": "pin"
+  },
+  {
+    "id": 10,
+    "label": "Business",
+    "url": "#",
+    "icon": "business"
+  },
+  {
+    "id": 11,
+    "label": "Technology",
+    "url": "#",
+    "icon": "tech"
+  },
+  {
+    "id": 12,
+    "label": "Entertainment",
+    "url": "#",
+    "icon": "film"
+  },
+  {
+    "id": 13,
+    "label": "Sports",
+    "url": "#",
+    "icon": "bike"
+  },
+  {
+    "id": 14,
+    "label": "Science",
+    "url": "#",
+    "icon": "flask"
+  },
+  {
+    "id": 15,
+    "label": "Health",
+    "url": "#",
+    "icon": "gym"
+  }
+]

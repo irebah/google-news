@@ -6,8 +6,13 @@ import Help from "./Help";
 import Search from "./Search";
 import Settings from "./Settings";
 
-const Header = () => (
-  <header className="bg-white dark:bg-black-100 dark:text-white-100 text-gray-500 flex justify-between items-center p-5 border-b border-gray-200 dark:border-gray-700">
+interface HeaderProps {
+  className?: string;
+}
+
+const Header = ({ className }: HeaderProps) => (
+  <header className={`${className} flex justify-between items-center`}>
+    {" "}
     <section className="flex gap-4">
       <HamburgerMenu className="h-7 inline-block md:hidden" />
       <div className="flex gap-1 items-end">
