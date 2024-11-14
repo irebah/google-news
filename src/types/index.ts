@@ -8,4 +8,5 @@ export interface News {
   title: string;
   date: string;
   secondary?: Array<News>;
+  autor?: string;
 }

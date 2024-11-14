@@ -26,9 +26,9 @@ const App = () => {
 
   return (
     <>
-      <section className="sticky top-0 bg-white dark:bg-black-100 dark:text-white-100 text-gray-500 md:border-b md:border-white-200 md:dark:border-gray-700">
+      <section className="sticky z-10 top-0 bg-white dark:bg-black-100 dark:text-white-100 text-gray-500 md:border-b md:border-white-200 md:dark:border-gray-700">
         <Header className="border-b border-gray-200 dark:border-gray-700 md:border-0 px-5 py-2 md: pb-3" />
-        <Navigation className="px-5 md:pt-3" />
+        <Navigation className="md:pt-3" />
       </section>
 
       <main
@@ -58,18 +58,6 @@ const App = () => {
             </div>
           </div>
         </section>
-
-        {/* <section>
-          <h1 className="text-3xl mb-2">For you</h1>
-          <p className="mb-5 text-sm text-gray-600">Recommended based on your interests</p>
-          <div>
-            <Card title="Top stories" id="a" className="rounded-2xl" />
-            <div>
-              <Card title="Local News" id="b" className="rounded-2xl" />
-              <Card title="Picks for you" id="c" className="rounded-2xl" />
-            </div>
-          </div>
-        </section> */}
       </main>
     </>
   );

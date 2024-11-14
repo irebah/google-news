@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .smallDeviceMenu {
-  @apply flex gap-0 px-3 pt-3 text-sm bg-lightBackground dark:bg-darkBackground-2 absolute inset-0 w-[16rem] flex-col h-screen max-h-fit overflow-y-auto shadow-2xl;
+  @apply flex gap-0 pt-3 text-sm bg-lightBackground dark:bg-darkBackground-2 absolute inset-0 flex-col h-screen max-h-fit overflow-y-auto shadow-2xl;
 }
 
 .bigDeviceMenu {
@@ -16,4 +16,13 @@
 
 .horizontalSeparator {
   @apply after:content-[''] after:border-b-2 after:border-gray-400/30 after:w-[14rem] after:-ml-4 after:pb-12 after:absolute;
+}
+
+.scrollable-content {
+  -ms-overflow-style: none; /* IE 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollable-content::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in WebKit browsers (Chrome, Safari, etc.) */
 }

@@ -67,11 +67,15 @@ const Navigation = ({ className }: NavigationProps) => {
 
   return (
     <nav
-      className={`${className} relative hidden ${
-        showMenu ? "xs:block" : ""
-      } md:block md:overflow-y-auto`}
+      className={`${className} relative w-0 transition-all ease-in-out ${
+        showMenu ? "xs:min-w-[16rem]" : "xs:min-w-0"
+      } md:w-auto md:overflow-y-auto`}
     >
-      <ul className="smallDeviceMenu bigDeviceMenu">
+      <ul
+        className={`smallDeviceMenu bigDeviceMenu ${
+          showMenu ? "px-5" : ""
+        } md:px-5 scrollable-content`}
+      >
         {menuData.map((menuEntry) => (
           <a
             key={`${menuEntry.id}-${menuEntry.label}`}

@@ -1,8 +1,9 @@
+import { useEffect, useState } from "react";
+import { Fragment } from "react/jsx-runtime";
 import { FaChevronRight } from "react-icons/fa";
 import { News } from "../../types";
 import NewsBlock from "./NewsBlock";
-import { Fragment } from "react/jsx-runtime";
-import { useEffect, useState } from "react";
+import Loader from "./Loader";
 
 interface CardProps {
   title: string;
@@ -12,29 +13,28 @@ interface CardProps {
   imageSize?: string;
 }
 
-const Card = ({ title, id, className = "", titleClass = "", imageSize = "" }: CardProps) => {
-  const [loading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState<string>("");
+const Card = ({ title, id, className = "", titleClass = "", imageSize }: CardProps) => {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [data, setData] = useState<Array<News>>([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`/mockData/data-${id}.json`);
+        const response = await fetch(`./mockData/data-${id}.json`);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
 
         const result: Array<News> = await response.json();
         setData(result);
-        setLoading(false);
-      } catch (e) {
-        setError("Error fetching data");
-        setLoading(false);
+        setIsLoading(false);
+      } catch (e: any) {
+        setIsLoading(false);
       }
     };
 
-    fetchData();
+    // simulate loading
+    setTimeout(fetchData, 3000);
   }, [id]);
 
   return (
@@ -43,6 +43,7 @@ const Card = ({ title, id, className = "", titleClass = "", imageSize = "" }: Ca
         <p className="text-xl">{title}</p>
         <FaChevronRight className="" />
       </div>
+      {isLoading && <Loader id={id} />}
       {data.map((mainNews) => (
         <Fragment key={`${id}-${mainNews.id}`}>
           <hr className="mt-4 dark:border-darkBackground-2" />
@@ -57,7 +58,7 @@ const Card = ({ title, id, className = "", titleClass = "", imageSize = "" }: Ca
             />
 
             {mainNews.secondary && (
-              <aside className="flex gap-1 sm:block w-full overflow-y-auto mt-5 sm:mt-0 lg:w-3/5 rounded-xl sm:rounded-none">
+              <aside className="flex gap-1 sm:block w-full overflow-y-auto mt-5 sm:mt-0 lg:w-3/5 rounded-xl sm:rounded-none scrollable-content">
                 {mainNews.secondary.map((secondaryNews) => (
                   <NewsBlock
                     className="min-w-[20rem] sm:min-w-0 sm:mb-4 sm:last:mb-0 p-4 sm:p-0"
