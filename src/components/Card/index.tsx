@@ -34,7 +34,7 @@ const Card = ({ title, id, className = "", titleClass = "", imageSize }: CardPro
     };
 
     // simulate loading
-    setTimeout(fetchData, 3000);
+    setTimeout(fetchData, 1000);
   }, [id]);
 
   return (

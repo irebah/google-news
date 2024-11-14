@@ -1,6 +1,6 @@
 # Google News Clone - TypeScript, React, Vite, and Tailwind
 
-This is a Google News Clone built with React, TypeScript, Vite, and Tailwind CSS. The site is fully responsive and includes a dark mode feature. News data is loaded from mock data files located in public/mockData/\*.json, with a 3000ms delay to simulate data fetching, displaying skeleton loaders during the loading time.
+This is a Google News Clone built with React, TypeScript, Vite, and Tailwind CSS. The site is fully responsive and includes a dark mode feature. News data is loaded from mock data files located in public/mockData/\*.json, with a 1000ms delay to simulate data fetching, displaying skeleton loaders during the loading time.
 
 The app also includes a responsive navigation menu that hides when clicking outside of it, managed via React Context.
 
@@ -12,7 +12,7 @@ A live demo of this project is available at https://irebah.github.io/google-news
 
 - Responsive Design: The layout adjusts based on screen size, ensuring a good user experience on mobile, tablet, and desktop devices.
 - Dark Mode: The app includes a dark mode toggle, allowing users to switch between light and dark themes.
-- Skeleton Loader: While news data is loading (with a simulated delay of 3000ms), skeleton placeholders are shown to improve the user experience.
+- Skeleton Loader: While news data is loading (with a simulated delay of 1000ms), skeleton placeholders are shown to improve the user experience.
 - Mock Data: News data is loaded from public/mockData/\*.json files, simulating an API call with a delay.
 - Mobile-Responsive Menu: The navigation menu is fully responsive, with a hamburger-style menu for smaller screens. Additionally, React Context is used to hide the menu when clicking outside of it, improving the user experience on mobile devices.
 - Click Outside to Close Menu: The menu will automatically close if the user clicks outside of it, providing a better mobile navigation experience.
@@ -92,7 +92,7 @@ In this project, React Context is used to manage the visibility of the mobile me
   The navigation menu is designed to be fully responsive with Tailwind CSS. On smaller screens (mobile), the menu collapses into a hamburger button. This button opens and closes the full navigation menu, providing a user-friendly mobile experience.
 
 - Skeleton Loader
-  The news articles are loaded from mock JSON data, and a 3000ms delay is simulated to mimic an API call. During this delay, skeleton loaders (gray placeholder boxes) are shown for each news item. This gives users a smooth, professional experience as the data loads.
+  The news articles are loaded from mock JSON data, and a 1000ms delay is simulated to mimic an API call. During this delay, skeleton loaders (gray placeholder boxes) are shown for each news item. This gives users a smooth, professional experience as the data loads.
 
 - News Data (Mock Data)
   The data used in the app is stored in the public/mockData/\*.json folder. These JSON files simulate a real API call for news data, containing article objects with titles, descriptions, image URLs, and other relevant information. This data is loaded into the app during the initialization process.
