@@ -79,8 +79,12 @@ const Navigation = ({ className }: NavigationProps) => {
             rel="noopener noreferrer"
             onClick={(e) => onMenuEntryClicked(e, menuEntry.id)}
             className={`flex relative text-nowrap ${
-              activeMenu === menuEntry.id ? "bg-blue-200 md:bg-transparent md:text-blue-500" : ""
-            } p-5 md:p-0 text-darkBackground-2 rounded-full ${menuEntry.className || ""}`}
+              activeMenu === menuEntry.id
+                ? "bg-blue-200 dark:bg-[rgb(9,48,132)] dark:md:bg-transparent md:bg-transparent md:text-blue-500 dark:md:text-blue-400/90"
+                : ""
+            } p-5 md:p-0 text-darkBackground-2 dark:text-lightBackground-2 rounded-full ${
+              menuEntry.className || ""
+            }`}
           >
             <div className="md:hidden">
               <Icon type={menuEntry.icon || ""} className="size-5 mr-5" />
@@ -90,7 +94,7 @@ const Navigation = ({ className }: NavigationProps) => {
               <div
                 className={`hidden ${
                   activeMenu === menuEntry.id ? "md:block" : ""
-                } bg-blue-500 absolute h-1 w-full rounded-full bottom-0`}
+                } bg-blue-500 dark:bg-blue-400/90 absolute h-1 w-full rounded-full bottom-0`}
               ></div>
             </li>
           </a>

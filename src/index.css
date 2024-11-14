@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 .smallDeviceMenu {
-  @apply flex gap-0 px-3 pt-3 text-sm bg-lightBackground absolute inset-0 w-[16rem] flex-col h-screen max-h-fit overflow-y-auto shadow-2xl;
+  @apply flex gap-0 px-3 pt-3 text-sm bg-lightBackground dark:bg-darkBackground-2 absolute inset-0 w-[16rem] flex-col h-screen max-h-fit overflow-y-auto shadow-2xl;
 }
 
 .bigDeviceMenu {
-  @apply md:font-semibold md:pt-0 md:gap-10 md:px-0 md:bg-white md:relative md:inset-auto md:w-auto md:flex-row md:h-auto md:shadow-none;
+  @apply md:font-semibold md:pt-0 md:gap-10 md:px-0 md:bg-white dark:md:bg-transparent md:relative md:inset-auto md:w-auto md:flex-row md:h-auto md:shadow-none;
 }
 
 .verticalSeparator {
