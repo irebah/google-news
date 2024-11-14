@@ -1,0 +1,89 @@
+[
+  {
+    "id": 1,
+    "image": "img1.webp",
+    "source": {
+      "icon": "rnz_icon.png",
+      "text": "RNZ"
+    },
+    "title": "National hīkoi to descend on Rotorua",
+    "date": "2024-11-14T07:08:24Z",
+    "autor": "Amy Ridout",
+    "secondary": [
+      {
+        "id": 1,
+        "source": {
+          "icon": "rnz_icon.png",
+          "text": "RNZ"
+        },
+        "title": "Live: Parliament sits to debate Treaty Principles Bill",
+        "date": "2024-11-14T02:08:24Z"
+      },
+      {
+        "id": 2,
+        "source": {
+          "icon": "nzheraldicon.png",
+          "text": "New Zealand Herald"
+        },
+        "title": "Audrey Young: KC smackdown – top barristers join Treaty bill backlash",
+        "date": "2024-11-14T01:08:24Z"
+      },
+      {
+        "id": 3,
+        "source": {
+          "icon": "thepost.png",
+          "text": "The Post"
+        },
+        "title": "Christopher Luxon accuses David Seymour of 'not helping' the Government",
+        "date": "2024-11-14T01:08:24Z"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "image": "img2.jpeg",
+    "source": {
+      "icon": "onenews.webp"
+    },
+    "title": "Trump reveals major cabinet roles for Rubio, Gabbard and Gaetz",
+    "date": "2024-11-14T08:08:24Z",
+    "secondary": [
+      {
+        "id": 1,
+        "source": {
+          "icon": "bbc_icon.png",
+          "text": "BBC.com"
+        },
+        "title": "Matt Gaetz: Trump's choice for attorney general shocks Washington",
+        "date": "2024-11-14T05:08:24Z"
+      },
+      {
+        "id": 2,
+        "source": {
+          "icon": "washingtonPost.png",
+          "text": "The Washington Post"
+        },
+        "title": "Trump picks Gaetz and Gabbard for top jobs, daring Senate GOP to defy him",
+        "date": "2024-11-14T09:08:24Z"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "image": "img3.webp",
+    "source": {
+      "icon": "nzherald_co_nz.webp"
+    },
+    "title": "'Tragically taken': Police name victims of triple-fatal Hamilton train crash",
+    "date": "2024-11-14T02:08:24Z"
+  },
+  {
+    "id": 4,
+    "image": "img4.jpeg",
+    "source": {
+      "icon": "onenews.webp"
+    },
+    "title": "Three people die after train, car collide in Hamilton",
+    "date": "2024-11-14T06:08:24Z"
+  }
+]
